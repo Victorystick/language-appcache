@@ -1,0 +1,28 @@
+name: 'Cache Manifest'
+scopeName: 'text.appcache'
+firstLineMatch: '^CACHE MANIFEST'
+fileTypes: [
+  'appcache'
+]
+patterns: [
+  {
+    # Comments
+    match: '#.+$'
+    # end: '\\n'
+    name: 'comment.line.appcache'
+  }
+  {
+    # Heading
+    match: '^(?:CACHE MANIFEST)\\b'
+    name: 'keyword.appcache'
+  }
+  {
+    # Sections
+    match: '^(CACHE|FALLBACK|NETWORK)(\\:)'
+    captures:
+      1:
+        name: 'keyword.appcache'
+      2:
+        name: 'keyword.operator.appcache'
+  }
+]

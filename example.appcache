@@ -1,0 +1,16 @@
+CACHE MANIFEST# version 1
+
+NETWORK:
+afaf
+
+# CACHE
+CACHE:
+CACHE # foo
+
+FALLBACK:
+/ /index.html
+
+/main/features.js
+/main/settings/index.css
+http://files/images/scene.jpg
+http://files/images/world.jpg
