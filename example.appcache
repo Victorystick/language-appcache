@@ -1,16 +1,23 @@
-CACHE MANIFEST# version 1
+CACHE MANIFEST
+# 2010-06-18:v2
 
-NETWORK:
-afaf
-
-# CACHE
+# Explicitly cached 'master entries'.
 CACHE:
-CACHE # foo
+/favicon.ico
+index.html
+stylesheet.css
+images/logo.png
+scripts/main.js
 
+# Resources that require the user to be online.
+NETWORK:
+*
+
+# static.html will be served if main.py is inaccessible
+# offline.jpg will be served in place of all images in images/large/
+# offline.html will be served in place of all other .html files
 FALLBACK:
-/ /index.html
+/main.py /static.html
+images/large/ images/offline.jpg
 
-/main/features.js
-/main/settings/index.css
-http://files/images/scene.jpg
-http://files/images/world.jpg
+# EXAMPLE FROM: http://www.html5rocks.com/en/tutorials/appcache/beginner/
